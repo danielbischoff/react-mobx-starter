@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.config.js --color --progress",
     "build": "webpack --config config/webpack.prod.config.js",
+    "test": "test"
   },
   "keywords": [
     "react",

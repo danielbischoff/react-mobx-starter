@@ -15,8 +15,8 @@ Supported features:
 - [x] HMR of styles
 - [x] Autoprefixing of vendor prefixes
 - [x] Minifies/obfuscates your javascript in production
-- [] Add jest for testing
-- [] Add example code
+- [ ] Add jest for testing
+- [ ] Add example code
 
 ## How to run
 Checkout the project and run in your terminal:
