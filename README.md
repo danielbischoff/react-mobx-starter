@@ -15,13 +15,28 @@ Supported features:
 - [x] HMR of styles
 - [x] Autoprefixing of vendor prefixes
 - [x] Minifies/obfuscates your javascript in production
-- [ ] Add jest for testing
+- [x] Uses jest for unit testing
 - [ ] Add example code
 
-## How to run
+## Install
 Checkout the project and run in your terminal:
 
 ```
 npm install
+```
+
+## Run development mode
+```
 npm run dev
 ```
+
+## Run tests
+```
+npm run test
+```
+
+## Build for production
+```
+npm run build
+```
+The output will be under */dist*
