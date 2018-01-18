@@ -3,7 +3,7 @@
 Want to have a quickstart with react, mobx and typescript?
 
 Check out this project to spent time implementing your features and not setting up your build config.
-To help you while developing, it reloads components and stylesheets on the fly. No page reloading required.
+To help you while developing, it reloads components and stylesheets on the fly. No full page reload required.
 
 Supported features:
 - [x] Typescript
@@ -16,7 +16,10 @@ Supported features:
 - [x] Autoprefixing of vendor prefixes
 - [x] Minifies/obfuscates your javascript in production
 - [x] Uses jest for unit testing
-- [ ] Add example code
+- [x] Use VS Code to debug your code and tests
+
+## Prerequisite
+To debug your unit tests, please make sure you are using node version >= 8.9.4
 
 ## Install
 Checkout the project and run in your terminal:
@@ -30,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## Run tests
+## Run test∏
 ```
 npm run test
 ```
@@ -40,3 +43,7 @@ npm run test
 npm run build
 ```
 The output will be under */dist*
+
+## Debug active unit test file
+To debug the active unit test file, go to the debug section in VS Code and select the "Jest Test Current File" launch config.
+Then open your unit test file, set breakpoints wherever you want and press "F5".

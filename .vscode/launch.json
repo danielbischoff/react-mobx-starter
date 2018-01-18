@@ -9,11 +9,11 @@
             "request": "launch",
             "name": "Jest Tests",
             "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-            "sourceMaps": true,
             "args": [
-                "-i",
                 "--config",
                 "${workspaceFolder}/config/jest.config.js",
+                "-i",
+                "--no-cache",
             ],
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -22,12 +22,12 @@
             "request": "launch",
             "name": "Jest Test Current File",
             "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-            "sourceMaps": true,
             "args": [
-                "-i",
                 "--config",
                 "${workspaceFolder}/config/jest.config.js",
-                "${workspaceFolder}/${relativeFile}"
+                "-i",
+                "--no-cache",
+                "${file}",
             ],
             "internalConsoleOptions": "openOnSessionStart"
         },
@@ -37,6 +37,9 @@
             "name": "Attach to Chrome",
             "sourceMaps": true,
             "port": 9222,
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${workspaceRoot}/*"
+            }
         },
     ]
 }

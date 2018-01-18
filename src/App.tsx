@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as styles from './app.scss';
+import { HomeContainer } from './containers';
 
-export default class App extends React.Component {
+export class App extends React.Component {
   render() {
     return (
-      <div className={styles.container}>Hello World</div>
+      <HomeContainer />
     );
   }
 }
