@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## Run test∏
+## Run test
 ```
 npm run test
 ```
