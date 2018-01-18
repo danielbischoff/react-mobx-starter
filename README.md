@@ -13,7 +13,7 @@ Supported features:
 - [x] Generates type definitions for your stylesheets
 - [x] HMR of components
 - [x] HMR of styles
-- [x] Autoprefixing of vendor prefixes
+- [x] Autoprefixing of css vendor prefixes
 - [x] Minifies/obfuscates your javascript in production
 - [x] Uses jest for unit testing
 - [x] Use VS Code to debug your code and tests
