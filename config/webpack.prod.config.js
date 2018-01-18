@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const config = {
-  entry: './src/app.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js'
