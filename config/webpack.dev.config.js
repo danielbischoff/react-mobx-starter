@@ -71,8 +71,6 @@ const config = {
     new webpack.WatchIgnorePlugin([
       /scss\.d\.ts$/
     ]),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',

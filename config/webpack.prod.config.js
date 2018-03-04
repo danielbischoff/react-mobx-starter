@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -48,14 +47,7 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['dist']),
-    new UglifyJSPlugin({
-      sourceMap: true,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       title: 'React Mobx Starter',
