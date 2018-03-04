@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const config = {
+  mode: 'production',
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../dist'),
