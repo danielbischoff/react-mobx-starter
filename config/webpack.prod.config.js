@@ -47,7 +47,6 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       title: 'React Mobx Starter',

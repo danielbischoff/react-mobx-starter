@@ -29,7 +29,6 @@
     "@types/react-dom": "^16.0.3",
     "@types/webpack-env": "^1.13.3",
     "autoprefixer": "^7.2.4",
-    "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.8",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
