@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -17,19 +16,31 @@ const config = {
   },
   devtool: 'source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.tsx?$/,
         use: 'ts-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }]
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            {
+          use: [{
               loader: 'typings-for-css-modules-loader',
-              options: { modules: true, camelCase: true, importLoaders: 2, namedExport: true }
+              options: {
+                modules: true,
+                camelCase: true,
+                importLoaders: 2,
+                namedExport: true
+              }
             },
             {
               loader: 'postcss-loader',
@@ -42,7 +53,8 @@ const config = {
             {
               loader: 'sass-loader',
             },
-        ]})         
+          ]
+        })
       }
     ]
   },

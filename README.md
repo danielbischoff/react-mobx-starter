@@ -47,3 +47,21 @@ The output will be under */dist*
 ## Debug active unit test file
 To debug the active unit test file, go to the debug section in VS Code and select the "Jest Test Current File" launch config.
 Then open your unit test file, set breakpoints wherever you want and press "F5".
+
+### Use images in ts
+To use images, you can import them in your current file and webpack will give you the image as a base64 encoded string or as a path to the image.
+
+```javascript
+import * as image from './image.jpg';
+
+const ImageComponent = () => <img src={image} />;
+```
+
+### Use images in scss
+Just import them via the url syntax. The path is relative to the scss file.
+
+```scss
+.container {
+  background-image: url('./image.jpg');
+}
+```

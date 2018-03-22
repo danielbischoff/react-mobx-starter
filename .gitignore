@@ -2,3 +2,4 @@ node_modules/
 src/**/*.scss.d.ts
 dist/
 .DS_Store
+yarn-error.log

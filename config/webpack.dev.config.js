@@ -8,7 +8,7 @@ const PORT = process.env.PORT || '9000';
 
 const config = {
   mode: 'development',
-  entry:   {
+  entry: {
     app: './src/index.tsx',
   },
   output: {
@@ -20,21 +20,30 @@ const config = {
   },
   devtool: 'eval-cheap-module-source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.tsx?$/,
         use: 'ts-loader'
       },
       {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }]
+      },
+      {
         test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
+        use: [{
+            loader: 'style-loader'
+          },
           {
             loader: 'typings-for-css-modules-loader',
             options: {
               modules: true,
               sourceMap: true,
-              camelCase: true, 
+              camelCase: true,
               importLoaders: 2,
               namedExport: true,
               localIdentName: '[name]_[local]_[hash:base64:5]',
@@ -51,7 +60,9 @@ const config = {
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true },
+            options: {
+              sourceMap: true
+            },
           },
         ]
       }
