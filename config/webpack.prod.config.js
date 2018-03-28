@@ -18,7 +18,12 @@ const config = {
   module: {
     rules: [{
         test: /\.tsx?$/,
-        use: 'ts-loader'
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            onlyCompileBundledFiles: true,
+          }
+        }]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
