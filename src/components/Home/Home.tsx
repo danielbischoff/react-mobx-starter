@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import * as styles from './Home.scss';
+import { Button, Container, NumberDisplay } from './styles';
 
 interface HomeProps {
     counter: number;
@@ -18,11 +18,11 @@ export class Home extends React.Component<HomeProps, {}> {
         } = this.props;
 
         return (
-            <div className={styles.container}>
-                <button onClick={decrement}>-</button>
-                <span className={styles.number}>{counter}</span>
-                <button onClick={increment}>+</button>
-            </div>
+            <Container>
+                <Button onClick={decrement}>-</Button>
+                <NumberDisplay>{counter}</NumberDisplay>
+                <Button onClick={increment}>+</Button>
+            </Container>
         )
     }
 }

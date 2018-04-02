@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '9000';
@@ -38,40 +37,7 @@ const config = {
           }
         }]
       },
-      {
-        test: /\.scss$/,
-        use: [{
-            loader: 'style-loader'
-          },
-          {
-            loader: 'typings-for-css-modules-loader',
-            options: {
-              modules: true,
-              sourceMap: true,
-              camelCase: true,
-              importLoaders: 2,
-              namedExport: true,
-              localIdentName: '[name]_[local]_[hash:base64:5]',
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            },
-          },
-        ]
-      }
-    ]
+    ],
   },
   devServer: {
     host: HOST,
@@ -84,15 +50,12 @@ const config = {
     open: true,
   },
   plugins: [
-    new webpack.WatchIgnorePlugin([
-      /scss\.d\.ts$/
-    ]),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       title: 'React Mobx Starter',
       inject: 'body'
-    })
+    }),
   ]
 };
 

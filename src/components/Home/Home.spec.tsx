@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Home } from './Home';
 import { shallow } from 'enzyme';
+import { NumberDisplay, Button } from './styles';
 
 test('that counter is rendered', () => {
     const wrapper = shallow(
@@ -10,7 +11,7 @@ test('that counter is rendered', () => {
         decrement={() => {}}         
     />);
 
-    expect(wrapper.find('span').text()).toBe('1');
+    expect(wrapper.find(NumberDisplay).childAt(0).text()).toBe('1');
 });
 
 test('that decrement is called when button decrement is clicked', () => {
@@ -22,7 +23,7 @@ test('that decrement is called when button decrement is clicked', () => {
         decrement={decrementSpy}         
     />);
 
-    wrapper.find('button').first().simulate('click');
+    wrapper.find(Button).first().simulate('click');
 
     expect(decrementSpy).toBeCalled();
 });
@@ -36,7 +37,7 @@ test('that increment is called when button increment is clicked', () => {
         decrement={() => {}}         
     />);
 
-    wrapper.find('button').at(1).simulate('click');
+    wrapper.find(Button).at(1).simulate('click');
 
     expect(incrementSpy).toBeCalled();
 });
