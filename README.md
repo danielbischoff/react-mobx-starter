@@ -9,11 +9,9 @@ Supported features:
 - [x] Typescript
 - [x] React
 - [x] Mobx
-- [x] SASS and CSS modules
-- [x] Generates type definitions for your stylesheets
+- [x] Styled components
 - [x] HMR of components
 - [x] HMR of styles
-- [x] Autoprefixing of css vendor prefixes
 - [x] Minifies/obfuscates your javascript in production
 - [x] Uses jest for unit testing
 - [x] Use VS Code to debug your code and tests
@@ -50,20 +48,10 @@ Then open your unit test file, set breakpoints wherever you want and press "F5".
 
 ## How to use images
 
-### Use images from ts
 To use images, you can import them in your current file and webpack will give you the image as a base64 encoded string or as a path to the image.
 
 ```javascript
 import * as image from './image.jpg';
 
 const ImageComponent = () => <img src={image} />;
-```
-
-### Use images from scss
-Just import them via the url syntax. The path is relative to the scss file.
-
-```scss
-.container {
-  background-image: url('./image.jpg');
-}
 ```
