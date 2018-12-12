@@ -1,1 +1,1 @@
-export { ApplicationStore } from './ApplicationStore';
+export { ApplicationStore } from "./ApplicationStore";
