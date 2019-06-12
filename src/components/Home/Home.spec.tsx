@@ -1,45 +1,28 @@
-import { shallow } from "enzyme";
 import * as React from "react";
+import { fireEvent, render } from "../../testUtils";
 import { Home } from "./Home";
-import { Button, NumberDisplay } from "./styles";
+import console = require("console");
 
 test("that counter is rendered", () => {
-  const wrapper = shallow(
-    <Home counter={1} increment={() => {}} decrement={() => {}} />
-  ).dive();
+  const wrapper = render(<Home />);
 
-  expect(
-    wrapper
-      .find(NumberDisplay)
-      .childAt(0)
-      .text()
-  ).toBe("1");
+  expect(wrapper.getByTestId("counter-value").textContent).toBe("0");
 });
 
-test("that decrement is called when button decrement is clicked", () => {
-  const decrementSpy = jest.fn();
-  const wrapper = shallow(
-    <Home counter={1} increment={() => {}} decrement={decrementSpy} />
-  ).dive();
+test("that decrement button click decrements value", () => {
+  const wrapper = render(<Home />);
 
-  wrapper
-    .find(Button)
-    .first()
-    .simulate("click");
+  const decrementButton = wrapper.getByText("-");
+  fireEvent.click(decrementButton);
 
-  expect(decrementSpy).toBeCalled();
+  expect(wrapper.getByTestId("counter-value").textContent).toBe("-1");
 });
 
-test("that increment is called when button increment is clicked", () => {
-  const incrementSpy = jest.fn();
-  const wrapper = shallow(
-    <Home counter={1} increment={incrementSpy} decrement={() => {}} />
-  ).dive();
+test("that increment button click increments value", () => {
+  const wrapper = render(<Home />);
 
-  wrapper
-    .find(Button)
-    .at(1)
-    .simulate("click");
+  const incrementButton = wrapper.getByText("+");
+  fireEvent.click(incrementButton);
 
-  expect(incrementSpy).toBeCalled();
+  expect(wrapper.getByTestId("counter-value").textContent).toBe("1");
 });

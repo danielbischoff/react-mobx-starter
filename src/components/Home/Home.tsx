@@ -1,28 +1,20 @@
-import * as React from 'react';
-import { observer } from 'mobx-react';
-import { Button, Container, NumberDisplay } from './styles';
+import { observer } from "mobx-react";
+import * as React from "react";
+import { AppContext } from "../../AppContext";
+import { Button, Container, NumberDisplay } from "./styles";
 
-interface HomeProps {
-    counter: number;
-    increment: () => void;
-    decrement: () => void;
-}
+interface Props {}
 
-@observer
-export class Home extends React.Component<HomeProps, {}> {
-    render() {
-        const {
-            counter,
-            increment,
-            decrement,
-        } = this.props;
+export const Home = observer(function(props: Props) {
+  const { applicationStore } = React.useContext(AppContext);
 
-        return (
-            <Container>
-                <Button onClick={decrement}>-</Button>
-                <NumberDisplay>{counter}</NumberDisplay>
-                <Button onClick={increment}>+</Button>
-            </Container>
-        )
-    }
-}
+  return (
+    <Container>
+      <Button onClick={applicationStore.decrement}>-</Button>
+      <NumberDisplay data-testid="counter-value">
+        {applicationStore.counter}
+      </NumberDisplay>
+      <Button onClick={applicationStore.increment}>+</Button>
+    </Container>
+  );
+});
