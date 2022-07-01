@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Jest Tests",
-      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "args": [
         "--config",
         "${workspaceFolder}/config/jest.config.js",
@@ -21,12 +21,13 @@
       "type": "node",
       "request": "launch",
       "name": "Jest Test Current File",
-      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "args": [
         "--config",
         "${workspaceFolder}/config/jest.config.js",
         "-i",
         "--no-cache",
+        "--findRelatedTests",
         "${relativeFile}"
       ],
       "internalConsoleOptions": "openOnSessionStart"
